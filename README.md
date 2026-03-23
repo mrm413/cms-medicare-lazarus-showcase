@@ -220,6 +220,22 @@ Lazarus also achieves [100% pass rate on the full GnuCOBOL 3.2 validation suite]
 
 ---
 
+## Related Showcases
+
+- [CMS Medicare — Ironclad Rust](https://github.com/mrm413/cms-medicare-ironclad-showcase) -- 55 CMS Medicare pricer programs transpiled to Rust (100%)
+- [Lazarus COBOL Showcase](https://github.com/mrm413/lazarus-cobol-showcase) -- 1,607 GnuCOBOL test programs transpiled to hardened C++17 (100%)
+- [Lazarus CardDemo Showcase](https://github.com/mrm413/lazarus-carddemo-showcase) -- 44 AWS CardDemo CICS/COBOL programs transpiled to C++17 (100%)
+
+---
+
+## Related Showcases
+
+- [CMS Medicare — Ironclad Rust](https://github.com/mrm413/cms-medicare-ironclad-showcase) -- 55 CMS Medicare pricer programs transpiled to Rust (100%)
+- [GnuCOBOL Test Suite — Lazarus C++17](https://github.com/mrm413/lazarus-cobol-showcase) -- 1,607 GnuCOBOL 3.2 test programs transpiled to hardened C++17 (100%)
+- [Lazarus CardDemo Showcase](https://github.com/mrm413/lazarus-carddemo-showcase) -- 44 AWS CardDemo CICS/COBOL programs transpiled to C++17 (100%)
+
+---
+
 ## Built By
 
 **Torsova LLC** — [lazarus-systems.com](https://lazarus-systems.com)
