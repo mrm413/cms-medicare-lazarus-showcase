@@ -1,0 +1,17 @@
+# Binaries
+*.exe
+*.obj
+*.o
+*.a
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
