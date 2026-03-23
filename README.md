@@ -246,4 +246,8 @@ Lazarus is part of a suite of legacy modernization tools including transpilers f
 
 ## License
 
-The original COBOL programs in `cobol_source/` are CMS (Centers for Medicare & Medicaid Services) public-domain pricer programs. The transpiled C++17 output is provided for demonstration purposes. The Lazarus transpilation engine is proprietary software owned by Torsova LLC.
+Licensed under the [Apache License, Version 2.0](LICENSE).
+
+The original CMS Medicare pricer programs are U.S. Government works in the public domain.
+
+All modifications and additions -- including the C++17 transpiled programs, security hardening, build system, and test suite -- are Copyright 2025 Michael R. Mull / Lazarus Systems. See [NOTICE](NOTICE) for details.
