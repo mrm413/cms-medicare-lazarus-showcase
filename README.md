@@ -32,7 +32,9 @@ What this repository does **not** claim, and is careful not to imply:
 | Total COBOL lines | 92,535 |
 | Total hardened C++17 lines | 97,924 |
 | External dependencies | 0 |
-| C++ standard | C++17 (`-std=c++17 -Wall -Wextra -Wpedantic`) |
+| C++ standard | C++17 (`-std=c++17 -Wall -Wextra -Wpedantic -O2`) |
+| Last compile-rate verification | 2026-05-09 (Docker, ubuntu:24.04, g++ 13.3.0) |
+| Raw verification log | `evidence/compile_validation_2026-05-09.log` |
 | AI/LLM in the loop | None |
 
 ### Pricer Systems
@@ -111,19 +113,45 @@ cms-medicare-lazarus-showcase/
 
 ## How to Verify the 55/55 Compile Claim
 
+The cpp_output directory is flat — 55 self-contained `.cpp` files, each embedding its own framework header. Verify with:
+
 ```bash
 # Compile every output file with strict warnings
 cd cpp_output
-for cat in */; do
-    for prog in "$cat"*.cpp; do
-        g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -c "$prog" -o /dev/null 2>&1 \
-            && echo "OK: $prog" \
-            || echo "FAIL: $prog"
-    done
-done | tee compile_log.txt
-grep -c "^OK:"  compile_log.txt   # should be 55
-grep -c "^FAIL:" compile_log.txt  # should be 0
+PASS=0; FAIL=0
+for prog in *.cpp; do
+    if g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -c "$prog" -o /dev/null 2>/dev/null; then
+        echo "PASS  $prog"
+        PASS=$((PASS+1))
+    else
+        echo "FAIL  $prog"
+        FAIL=$((FAIL+1))
+    fi
+done
+echo "---"
+echo "Total: 55  PASS: $PASS  FAIL: $FAIL"
 ```
+
+### Docker-based reproducer (matches the run that produced `evidence/compile_validation_2026-05-09.log`)
+
+```bash
+docker run --rm \
+  -v "$(pwd)/cpp_output:/cpp:ro" \
+  ubuntu:24.04 \
+  bash -c '
+apt-get update -qq && apt-get install -y --no-install-recommends g++ >/dev/null
+cd /cpp
+PASS=0; FAIL=0
+for f in *.cpp; do
+    g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -c "$f" -o /tmp/x.o 2>/dev/null \
+        && { echo "PASS  $f"; PASS=$((PASS+1)); } \
+        || { echo "FAIL  $f"; FAIL=$((FAIL+1)); }
+done
+echo "Total: 55  PASS: $PASS  FAIL: $FAIL"
+'
+```
+
+Expected output: `Total: 55  PASS: 55  FAIL: 0`. The most recent confirmed run is in [`evidence/compile_validation_2026-05-09.log`](evidence/compile_validation_2026-05-09.log) — 55/55 PASS under g++ 13.3.0 on ubuntu:24.04.
 
 ---
 

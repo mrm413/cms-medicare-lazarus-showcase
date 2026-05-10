@@ -1,0 +1,66 @@
+=== CMS Medicare Lazarus C++17 Compile Audit ===
+Flags: -std=c++17 -Wall -Wextra -Wpedantic -O2 (per README claim)
+
+PASS  ESCAL056_hardened.cpp
+PASS  ESCAL062_hardened.cpp
+PASS  ESCAL070_hardened.cpp
+PASS  ESCAL071_hardened.cpp
+PASS  ESCAL080_hardened.cpp
+PASS  ESCAL091_hardened.cpp
+PASS  ESCAL100_hardened.cpp
+PASS  ESCAL117_hardened.cpp
+PASS  ESCAL122_hardened.cpp
+PASS  ESCAL130_hardened.cpp
+PASS  ESCAL140_hardened.cpp
+PASS  ESCAL151_hardened.cpp
+PASS  ESCAL160_hardened.cpp
+PASS  ESCAL170_hardened.cpp
+PASS  ESCAL171_hardened.cpp
+PASS  ESCAL180_hardened.cpp
+PASS  ESCAL191_hardened.cpp
+PASS  ESCAL200_hardened.cpp
+PASS  ESCAL202_hardened.cpp
+PASS  ESCAL212_hardened.cpp
+PASS  ESDRV212_hardened.cpp
+PASS  HOSDR210_hardened.cpp
+PASS  HOSPR210_hardened.cpp
+PASS  LTCAL032_hardened.cpp
+PASS  LTCAL042_hardened.cpp
+PASS  LTCAL043_hardened.cpp
+PASS  LTCAL058_hardened.cpp
+PASS  LTCAL059_hardened.cpp
+PASS  LTCAL063_hardened.cpp
+PASS  LTCAL064_hardened.cpp
+PASS  LTCAL072_hardened.cpp
+PASS  LTCAL075_hardened.cpp
+PASS  LTCAL080_hardened.cpp
+PASS  LTCAL087_hardened.cpp
+PASS  LTCAL091_hardened.cpp
+PASS  LTCAL094_hardened.cpp
+PASS  LTCAL095_hardened.cpp
+PASS  LTCAL103_hardened.cpp
+PASS  LTCAL105_hardened.cpp
+PASS  LTCAL111_hardened.cpp
+PASS  LTCAL123_hardened.cpp
+PASS  LTCAL130_hardened.cpp
+PASS  LTCAL141_hardened.cpp
+PASS  LTCAL152_hardened.cpp
+PASS  LTCAL154_hardened.cpp
+PASS  LTCAL162_hardened.cpp
+PASS  LTCAL170_hardened.cpp
+PASS  LTCAL183_hardened.cpp
+PASS  LTCAL190_hardened.cpp
+PASS  LTCAL202_hardened.cpp
+PASS  LTDRV202_hardened.cpp
+PASS  LTMGR202_hardened.cpp
+PASS  LTOPN202_hardened.cpp
+PASS  SNFDR211_hardened.cpp
+PASS  SNFPR210_hardened.cpp
+
+============================================
+  CMS Medicare Compile Audit Summary
+============================================
+  Total: 55
+  PASS:  55
+  FAIL:  0
+
